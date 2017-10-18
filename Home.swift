@@ -1,23 +1,23 @@
 //
-//  CTTabBar.swift
+//  Home.swift
 //  Constellation
 //
-//  Created by JD on 2017/10/17.
+//  Created by JD on 2017/10/18.
 //  Copyright © 2017年 JD. All rights reserved.
 //
 
 import UIKit
 
-class CTTabBar: UITabBarController {
+class Home: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.red
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+
     }
-    
+
 }

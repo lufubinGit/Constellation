@@ -394,6 +394,31 @@ extension UIColor{
     }
 }
 
+
+/***  一站式 建立 tabBar  **/
+extension UITabBarController {
+    
+    convenience init(titles:[String],titleColor:UIColor?,selectTitleColor:UIColor?,images:[UIImage],selectImages:[UIImage],chindViewControllers:[UIViewController]){
+        
+        self.init()
+        for i in 0..<titles.count {
+            
+            let vc = chindViewControllers[i]
+            if let color = titleColor {
+                vc.tabBarItem.setBadgeTextAttributes([NSForegroundColorAttributeName:color], for: .normal)
+            }
+            
+            if let color = selectTitleColor {
+                vc.tabBarItem.setBadgeTextAttributes([NSForegroundColorAttributeName:color], for: .normal)
+            }
+            
+            vc.tabBarItem.image = images[i]
+            vc.tabBarItem.selectedImage = selectImages[i].withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+            self.addChildViewController(UINavigationController.init(rootViewController: vc))
+        }
+    }
+}
+
 // MARK: - 图片的扩展
 extension UIImage{
     

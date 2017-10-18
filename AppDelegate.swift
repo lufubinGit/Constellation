@@ -21,9 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.makeKeyAndVisible()
         
-        let rooTabbar :CTTabBar = CTTabBar()
-        
-        self.window?.rootViewController = rooTabbar
+        self.window?.rootViewController =  CTTabBarCreater.getTabBar()
         
         return true
     }
